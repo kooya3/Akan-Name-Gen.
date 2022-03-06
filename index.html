@@ -1,45 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <header>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akan Name Generator</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
-  </header>
-  <nav class="navbar">
-        <a><strong>Name Generator</strong></a>
-        <nav class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">settings</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
+  <style>
+    body {
+      margin: 0;
+    
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+
+      font-family: 'quicksand', sans-serif;
+      font-weight: bold;
+      font-size: 20px;
+
+      display: grid;
+      background-color: whitesmoke;
+
+      grid-template-columns: 1fr 1fr 1fr; 
+      grid-template-rows: 50pt 1fr 100px;
+
+      /*or/
+
+      /*
+      grid-template: 50px 1fr 1fr 100px / repeat(3, 1fr);
+      
+      
+
+      gap: 13px;
+
+      /*creating a gap or space between containers use this
+      padding: 10px;
+      box-sizing: border-box;
+      */
+    }
+    .container div {
+      padding: 8px;
+      border: 1px solid #0000; 
+    }
+    .header {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      background-color: black;
+      color: white;
+      font-size: 40px;
+      font-family: fantasy, sans-serif;
+      font-weight: bolder;
+    }
+    .content_large{
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      font-size: 35px;
+      font-display: center;
+
+      /*if you want to minimize the size of the content-box, adjust the grid function*/
+
+      grid-column-end: 2;
+      background: radial-gradient(lightgray, transparent)
+
+    }
+    .footer{
+      grid-column: 1 / span 3;
+      background-color: whitesmoke;
+      width: 98%;
+
+    }
+    .result{
+      height: 50vh;
+      width: 50vh;
+      background: black;
+      color: white;
+      grid-row: 50pt;
+    }
+    .submit{
+      size: 25pt;
+      color: brown;
+      background-color: blanchedalmond;
+    }
+  </style>
 </head>
+
 <body>
-<p>
-  <div class="dob">
-  <label>Enter your Date of birth</label>
-    <input>
+  <div class="container">
+    <div class="header">Akan Name Generator </div>
+    <div class="content_large">Description <br>
+    <p>This website is designed to display your ghanian Akan name by just entering your birthday information as well as your gender. </p></div>
+    <div class="content_small">
+      <form id="form">
+      <label for="birthday">
+        <p>When were you born?</p>
+        <input type="date" name="birthday" id="DOB" required>
+        </label>
+        <p>Gender</p>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label><br />
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label><br /> <br />
+
+        <input type="submit" value = "Submit" onclick="result()">
+        <p id="result"></p>
+      </form>
   </div>
-  <br>
-  <div class="gender">
-    <label for="gender">select your gender</label>
-    <input>
+     <script src="script.js"> 
+    </script>
   </div>
-  <div>
-    <button>
-      <strong>
-        <a class="nav-logo" href="script.js">Submit</a>
-      </strong>
-    </button>
-  </div>
-  <script src="script.js"></script>
-</p>
+    <div class="footer"></div>
+
+  </div>  
 </body>
 </html>
