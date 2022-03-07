@@ -70,7 +70,7 @@
       grid-row-end: 3;
       grid-column-start: 1;
       font-size: 30px;
-      color: white;
+      color: black;
       font-display: center;
 
       /*if you want to minimize the size of the content-box, adjust the grid function*/
@@ -101,14 +101,17 @@
     .content_small{
       font-size: 30px;
       font-weight: 400;
-      color: greenyellow;
-      word-spacing: 2.3mm;
+      color: gray;
+      word-spacing: 1.3mm;
+	    font-family: 'sans-serif';
+	    
+	    
     }
     .image{
       background-image: url(./images/circle.jpg);
       background-size: contain;
       background-repeat: no-repeat;
-      height: 100vh;
+      height: 30vh;
       width: 18vw;
       top: 20%;
     }
@@ -131,6 +134,7 @@
         <p>When were you born?</p>
         <input type="date" name="birthday" id="DOB" required>
         </label>
+	      <br>
         <p>Gender</p>
         <input type="radio" id="male" name="gender" value="male" required>
         <label for="male">Male</label><br />
