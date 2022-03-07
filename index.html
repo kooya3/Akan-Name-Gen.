@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       margin: 0;
@@ -19,10 +21,18 @@
       font-size: 20px;
 
       display: grid;
-      background-color: whitesmoke;
 
       grid-template-columns: 1fr 1fr 1fr; 
       grid-template-rows: 50pt 1fr 100px;
+      
+      background-image: url(./images/grid.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 100%;
+      grid-template-columns: 2fr 2fr 2fr;
+      grid-column-start: 3;
+      grid-column-end: 3;
 
       /*or/
 
@@ -45,27 +55,31 @@
     .header {
       grid-column-start: 1;
       grid-column-end: 5;
-      background-color: black;
-      color: white;
-      font-size: 40px;
+      background-color: gray;
+      color: rgb(8, 8, 8);
+      font-size: 30px;
       font-family: fantasy, sans-serif;
-      font-weight: bolder;
+      font-weight: 400;
+      
     }
     .content_large{
       grid-row-start: 2;
       grid-row-end: 3;
       grid-column-start: 1;
-      font-size: 35px;
+      font-size: 30px;
+      color: white;
       font-display: center;
 
       /*if you want to minimize the size of the content-box, adjust the grid function*/
 
       grid-column-end: 2;
-      background: radial-gradient(lightgray, transparent)
+      background-image: url(./images/pattern.jpg);
+      background: radial-gradient(rgb(194, 191, 191), transparent)
+    
 
     }
     .footer{
-      grid-column: 1 / span 3;
+      grid-column: 1 / span 0;
       background-color: whitesmoke;
       width: 98%;
 
@@ -79,16 +93,34 @@
     }
     .submit{
       size: 25pt;
-      color: brown;
-      background-color: blanchedalmond;
+      background-color: black;
     }
+    .content_small{
+      font-size: 30px;
+      font-weight: 400;
+      color: greenyellow;
+      word-spacing: 2.3mm;
+    }
+    .image{
+      background-image: url(./images/circle.jpg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 100vh;
+      width: 18vw;
+      top: 20%;
+    }
+
   </style>
 </head>
 
 <body>
   <div class="container">
-    <div class="header">Akan Name Generator </div>
-    <div class="content_large">Description <br>
+    <div class="header">Akan Name Generator
+    <span class="material-icons-round" color="white">
+      </span>
+      <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z"/></svg>
+    </div>
+    <div class="content_large"><u>Description</u> <br>
     <p>This website is designed to display your ghanian Akan name by just entering your birthday information as well as your gender. </p></div>
     <div class="content_small">
       <form id="form">
@@ -106,6 +138,8 @@
         <p id="result"></p>
       </form>
   </div>
+  <div class="background-image"></div>
+<div class="image"></div>
      <script src="script.js"> 
     </script>
   </div>
